@@ -232,6 +232,19 @@ class Day13(Day):
         self.check_vertical()
         pass
 
+class Day19(Day):
+    def __init__(self):
+        super().__init__()
+        with open("data/aoc/19.txt", 'r') as file:
+            lines = file.read()
+
+        self.input = []
+        for line in lines.split(sep="\n\n"):
+            self.input.append(line.split(sep="\n"))
+
+    def run(self):
+        pass
+
 if __name__ == '__main__':
-    day = Day13()
+    day = Day19()
     day.run()
