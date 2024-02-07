@@ -28,6 +28,12 @@ class Day2(aoc.Day):
                 total += game
         return total
 
+    def run_part2(self):
+        total = 0
+        for game in self.dic:
+            total += self.dic[game]['red'] * self.dic[game]['green'] * self.dic[game]['blue']
+        return total
+
     def check_game(self, game_id):
         max_numbers = [12, 13, 14]
         for color, max_number in zip(['red', 'green', 'blue'], max_numbers):
@@ -38,3 +44,4 @@ class Day2(aoc.Day):
 if __name__ == '__main__':
     day = Day2()
     print(day.run())
+    print(day.run_part2())
