@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 import re
 
+cond = {'x': [1, 4000], 'm': [1, 4000], 'a': [1, 4000], 's': [1, 4000]}
 
 class Day19(adventofcode.Day):
     def __init__(self):
@@ -17,7 +18,8 @@ class Day19(adventofcode.Day):
 
         self.ratings = self.parse_ratings()
         self.workflows = self.parse_workflows()
-
+        self.visited = []
+        self.to_visit = self.workflows.keys()
 
     def run_workflow(self, scrap, starting_wf):
         cond_res = re.compile(r'(?<=:)[a-zA-Z]+$')
@@ -39,6 +41,18 @@ class Day19(adventofcode.Day):
                 else:
                     raise NotImplementedError
         raise NotImplementedError
+
+    def calc_workflow(self, cond, step):
+
+        if step == 'A':
+            return cond
+
+        if len(self.to_visit) == 0:
+            return cond
+
+
+        while len(to_visit) > 0:
+
 
     def check_cond(self, scrap, current_step):
         cond_key = re.compile(r'^[a-z](?=[<>])')
