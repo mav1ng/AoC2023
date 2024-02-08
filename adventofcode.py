@@ -12,45 +12,6 @@ class Day:
         raise NotImplementedError
 
 
-class Day1(Day):
-    def __init__(self):
-        super().__init__()
-        self.input = pd.read_csv('data/aoc/1.csv', header=None)
-        self.li = self.input[0].tolist()
-        self.num_dict = {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8, "nine": 9}
-
-    def findcal(self, line):
-        # Use regular expression to find all digits in the line
-        digits = re.findall(r'\d', line)
-
-        # Combine the first and last digit to form a two-digit number
-        if digits:
-            cal_value = int(digits[0] + digits[-1])
-            return cal_value
-        else:
-            return 0  # Return 0 if no digits are found in the line
-
-    def findcal_2(self, line):
-        pat = r'\d|one|two|three|four|five|six|seven|eight|nine'
-        pattern = re.compile(pat)
-        first = pattern.findall(line)[0]
-
-        pat = r'\d|one|two|three|four|five|six|seven|eight|nine'
-        pattern = re.compile(pat)
-        last = pattern.findall(line)[-1]
-
-    def run(self):
-
-        total = 0
-        for cal in self.li:
-            total += self.findcal(cal)
-        print(f'Total without replacement: {total}')
-
-        total = 0
-        for cal in self.li:
-            total += self.findcal_2(cal)
-        print(f'Total with replacement: {total}')
-
 class Day7(Day):
     def __init__(self, level):
         super().__init__()
