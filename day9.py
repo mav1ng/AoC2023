@@ -39,7 +39,6 @@ class Day9(aoc.Day):
         return sequence[0] - self.extrapolate_backwards(ret)
 
 
-
 if __name__ == '__main__':
     day = Day9()
     day.run()
