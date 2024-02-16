@@ -94,8 +94,6 @@ class Day5(aoc.Day):
         return to_convert
 
 
-
-
     def consider_ranges(self):
         n = len(self.seeds)
         self.seeds = []
