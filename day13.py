@@ -29,3 +29,8 @@ class Day13(aoc.Day):
     def run(self):
         self.check_vertical()
         pass
+
+
+if __name__ == '__main__':
+    day13 = Day13()
+    day13.run()
