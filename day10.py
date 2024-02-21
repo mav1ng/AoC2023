@@ -7,9 +7,7 @@ class Day10(aoc.Day):
 
         with open("data/aoc/10.txt", 'r') as file:
             self.lines = file.read().split("\n")
-        print(self.lines)
         for i, line in enumerate(self.lines):
-            print(line)
             for j, letter in enumerate(line):
                 if "S" == letter:
                     self.xstart = i
